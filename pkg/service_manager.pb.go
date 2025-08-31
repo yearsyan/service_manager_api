@@ -4,7 +4,7 @@
 // 	protoc        v5.29.2
 // source: service_manager.proto
 
-package proto
+package pkg
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -619,7 +619,7 @@ const file_service_manager_proto_rawDesc = "" +
 	"\x13RegisterServiceNode\x12+.service_manager.RegisterServiceNodeRequest\x1a\x1e.service_manager.EmptyResponse\x12p\n" +
 	"\x13RequestServiceToken\x12+.service_manager.RequestServiceTokenRequest\x1a,.service_manager.RequestServiceTokenResponse\x12s\n" +
 	"\x14RefreshServiceSecret\x12,.service_manager.RefreshServiceSecretRequest\x1a-.service_manager.RefreshServiceSecretResponse\x12u\n" +
-	"\x15QueryTokenAndNodeList\x12,.service_manager.RefreshServiceSecretRequest\x1a..service_manager.QueryTokenAndNodeListResponseB+Z)github.com/yearsyan/service_manager/protob\x06proto3"
+	"\x15QueryTokenAndNodeList\x12,.service_manager.RefreshServiceSecretRequest\x1a..service_manager.QueryTokenAndNodeListResponseB-Z+github.com/yearsyan/service_manager_api/pkgb\x06proto3"
 
 var (
 	file_service_manager_proto_rawDescOnce sync.Once

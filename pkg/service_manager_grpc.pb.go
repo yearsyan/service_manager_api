@@ -4,7 +4,7 @@
 // - protoc             v5.29.2
 // source: service_manager.proto
 
-package proto
+package pkg
 
 import (
 	context "context"

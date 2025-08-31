@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "github.com/yearsyan/service_manager/proto";
+option go_package = "github.com/yearsyan/service_manager_api/pkg";
 
 package service_manager;
 
