@@ -1,0 +1,68 @@
+syntax = "proto3";
+option go_package = "github.com/yearsyan/service_manager/proto";
+
+package service_manager;
+
+// 服务管理器服务
+service ServiceManager {
+  rpc RegisterServiceNode(RegisterServiceNodeRequest) returns (EmptyResponse);
+  rpc RequestServiceToken(RequestServiceTokenRequest) returns (RequestServiceTokenResponse);
+  rpc RefreshServiceSecret(RefreshServiceSecretRequest) returns (RefreshServiceSecretResponse);
+  rpc QueryTokenAndNodeList(RefreshServiceSecretRequest) returns (QueryTokenAndNodeListResponse);
+}
+
+message RequestService {
+  string app_id = 1;
+  optional string request_key = 2;
+}
+
+message RegisterServiceNodeRequest {
+  RequestService app = 1;
+  string node_id = 3;
+  string node_ip = 4;
+  string service_name = 5;
+  int32 service_type = 6;
+  int32 port = 7;
+}
+
+message EmptyResponse {
+  int32 code = 1;
+  string message = 2;
+}
+
+message RequestServiceTokenRequest {
+  RequestService caller_app = 1;
+  string callee_app_id = 2;
+  string service_name = 3;
+}
+
+message RequestServiceTokenResponse {
+  int32 code = 1;
+  string message = 2;
+  string token = 3;
+}
+
+message RefreshServiceSecretRequest {
+  RequestService caller_app = 1;
+  string service_name = 2;
+  int32 service_type = 3;
+  string secret_id = 4;
+}
+
+message RefreshServiceSecretResponse {
+  string secret = 1;
+  int64 timestamp = 2;
+}
+
+
+message ServiceNodeItem {
+  string node_ip = 1;
+  int32 port = 2;
+  string node_id = 3;
+}
+
+message QueryTokenAndNodeListResponse {
+  string secret = 1;
+  int64 timestamp = 2;
+  repeated ServiceNodeItem nodes = 3;
+}
